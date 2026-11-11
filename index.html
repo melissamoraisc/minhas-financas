@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eef3fb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Finanças">
+<title>Minhas Finanças</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="icon" href="icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icone-180.png">
+</head>
+<body>
+<div class="app">
+  <aside class="lateral" aria-label="Menu">
+    <div class="marca"><img class="logo" src="icone-192.png" alt=""><span id="marca-nome">Minhas Finanças</span></div>
+    <nav id="nav"></nav>
+  </aside>
+  <div class="principal">
+    <header class="topo">
+      <h1 id="titulo">Painel</h1>
+      <div class="mesnav" id="mesnav">
+        <button data-acao="mes-ant" aria-label="Mês anterior">‹</button>
+        <span class="mes" id="mes-txt"></span>
+        <button data-acao="mes-prox" aria-label="Próximo mês">›</button>
+        <button class="hoje-btn" id="btn-prox" data-acao="mes-hoje" title="Fatura que você vai pagar no próximo mês">Próxima fatura</button>
+      </div>
+      <div class="acoes-topo linha-flex" style="gap:2px">
+        <button class="icone-btn" id="btn-olho" data-acao="olho" aria-label="Ocultar valores"></button>
+        <button class="icone-btn" id="btn-tema" data-acao="tema" aria-label="Claro ou escuro"></button>
+        <button class="icone-btn" id="btn-sino" data-acao="alertas" aria-label="Alertas"></button>
+      </div>
+      <button class="btn pri add-topo" data-acao="mais">+ Adicionar</button>
+    </header>
+    <main class="conteudo" id="conteudo"></main>
+  </div>
+</div>
+<nav class="abas-baixo" id="abas-baixo" aria-label="Abas"></nav>
+<button class="fab" id="fab" data-acao="mais" aria-label="Adicionar"></button>
+<script src="regras.js"></script>
+<script src="dinheiro.js"></script>
+<script src="calculos.js"></script>
+<script src="graficos.js"></script>
+<script src="relatorio-pdf.js"></script>
+<script src="app.js"></script>
+<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});</script>
+</body>
+</html>
